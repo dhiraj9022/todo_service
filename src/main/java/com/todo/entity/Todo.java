@@ -1,6 +1,7 @@
 package com.todo.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.todo.dto.TODOSTATUS;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -26,7 +27,7 @@ public class Todo {
     @Column(name = "description")
     private String description;
 
-    private boolean status;
+    private TODOSTATUS status;
 
     @Column(name = "todo_date")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")

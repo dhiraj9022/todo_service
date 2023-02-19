@@ -21,8 +21,6 @@ public class TodoDto {
     @NotBlank
     private String description;
 
-    private boolean status;
-
     @NotNull
     @NotBlank
     private Date todoDate;
