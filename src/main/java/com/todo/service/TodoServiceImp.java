@@ -40,7 +40,6 @@ public class TodoServiceImp implements TodoService {
         Todo tdUpdate = getTodo(todoId);
 
         tdUpdate.setTodoTitle(todoDto.getTodoTitle());
-        tdUpdate.setStatus(TODOSTATUS.COMPLETED);
         tdUpdate.setDescription(todoDto.getDescription());
         tdUpdate.setTodoDate(todoDto.getTodoDate());
 
@@ -52,7 +51,7 @@ public class TodoServiceImp implements TodoService {
 
     @Override
     public Todo getTodo(int todoId) {
-        return todoRepository.findById(todoId).orElseThrow(null);
+        return todoRepository.findById(todoId).orElseThrow(()-> new RuntimeException("Id not found"));
     }
 
     @Override
