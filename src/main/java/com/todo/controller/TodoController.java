@@ -2,11 +2,15 @@ package com.todo.controller;
 
 import com.todo.dto.TodoDto;
 import com.todo.entity.Todo;
+import com.todo.service.TodoReportService;
 import com.todo.service.TodoService;
+import net.sf.jasperreports.engine.JRException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 @RestController
@@ -17,6 +21,9 @@ public class TodoController {
     public TodoController(TodoService todoService) {
         this.todoService = todoService;
     }
+
+    @Autowired
+    private TodoReportService todoReportService;
 
     @PostMapping
     public ResponseEntity<Todo> saveTodo(@RequestBody TodoDto todoDto){
@@ -50,8 +57,10 @@ public class TodoController {
         return ResponseEntity.noContent().build();
     }
 
-
-
+    @GetMapping("/report/{format}")
+    public  ResponseEntity<String> generateReport(@PathVariable String format) throws JRException, FileNotFoundException {
+        return  ResponseEntity.ok(todoReportService.exportTodoReport(format));
+    }
 
 }
 
