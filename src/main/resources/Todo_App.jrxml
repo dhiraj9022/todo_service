@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Todo_App" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="acf15bf8-cdb8-4299-bbcc-0739a46a1aaa">
+
+    <field name="todoId" class="java.lang.Integer" />
+    <field name="todoTitle" class="java.lang.String" />
+    <field name="description" class="java.lang.String" />
+    <field name="todoDate" class="java.sql.Date" />
+    <field name="createdAt" class="java.sql.Timestamp" />
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="80" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="545" height="80" uuid="e8898f72-2d57-4782-8513-07aab489e06d">
+                    <property name="com.jaspersoft.studio.unit.x" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.y" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="35"/>
+                </textElement>
+                <text><![CDATA[Todo App]]></text>
+            </staticText>
+            <line>
+                <reportElement x="-30" y="60" width="605" height="1" uuid="53573217-a39f-4d8e-9c9a-7fd8059828cb"/>
+            </line>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="62" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="560" height="30" uuid="16725d4e-c4cb-477c-ae04-6c95d9c18cb8"/>
+                <textElement textAlignment="Center">
+                    <font size="20"/>
+                </textElement>
+                <text><![CDATA[Maintain our day-to-day tasks]]></text>
+            </staticText>
+            <line>
+                <reportElement x="-20" y="40" width="601" height="1" uuid="1008e41e-8ae5-4f29-84b2-cb01cbd3cbb9"/>
+            </line>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="61" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="50" height="30" uuid="c793483d-c628-4f5d-8337-f2b5fff74aa6">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0ed41e3a-80d8-4099-a2e5-ac75d5482fac"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="15"/>
+                </textElement>
+                <text><![CDATA[ID]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="70" y="0" width="91" height="30" uuid="5583627a-e46e-4cc1-9387-7e66a7770165">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="10020861-10cc-4c8d-bfcf-f53f8e796981"/>
+                    <property name="com.jaspersoft.studio.unit.x" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="15"/>
+                </textElement>
+                <text><![CDATA[Todo Title]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="180" y="0" width="110" height="30" uuid="ddcc6cf5-07be-40c7-a953-1fff7ef314cb">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c3986d08-3e8b-476a-834d-ba0f7aa7c136"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="15"/>
+                </textElement>
+                <text><![CDATA[Description]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="310" y="0" width="120" height="30" uuid="7a0c7f9e-7de2-4ed6-9bad-611d0d58afc8">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a8270383-76c6-436a-bbfa-670958da63ce"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="15"/>
+                </textElement>
+                <text><![CDATA[Todo Date]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="444" y="0" width="100" height="30" uuid="0cd7a01d-bf05-4f3b-844e-5b438a88434f">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="655c45a3-a1ee-4400-bead-cac683312d2c"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="15"/>
+                </textElement>
+                <text><![CDATA[Creation Date]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="52" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="50" height="30" uuid="925e9aad-1926-492e-bbcd-afdfa8fdd315">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0ed41e3a-80d8-4099-a2e5-ac75d5482fac"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="13"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{todoId}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="70" y="0" width="91" height="30" uuid="c45d161c-fa1e-4702-8f9a-242606fffb9c">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="10020861-10cc-4c8d-bfcf-f53f8e796981"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="13"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{todoTitle}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="180" y="0" width="110" height="30" uuid="82465203-c1bd-4d9c-a9bf-5774a85d0ec4">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c3986d08-3e8b-476a-834d-ba0f7aa7c136"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="13"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="310" y="0" width="120" height="30" uuid="4e57d93c-d3d9-495e-b040-36769b3ce5e1">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a8270383-76c6-436a-bbfa-670958da63ce"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="13"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{todoDate}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="444" y="0" width="100" height="30" uuid="7dd181b4-f6e2-4f33-994f-21bbb1eb77ed">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="655c45a3-a1ee-4400-bead-cac683312d2c"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="13"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{createdAt}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>
